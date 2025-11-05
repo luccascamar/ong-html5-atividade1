@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>ONG Esperança Viva</h1>
+    <nav>
+      <ul class="menu-horizontal">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="projetos.html">Projetos</a></li>
+        <li><a href="doacoes.html">Doações</a></li>
+        <li><a href="cadastro.html">Cadastro</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <form id="loginForm">
+      <label>Email:
+        <input type="email" required />
+      </label>
+
+      <label>Senha:
+        <input type="password" required />
+      </label>
+
+      <label>Perfil:
+        <select id="perfil" required>
+          <option value="admin.html">Administrador</option>
+          <option value="voluntario.html">Voluntário</option>
+        </select>
+      </label>
+
+      <button type="submit">Entrar</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 ONG Esperança Viva</p>
+  </footer>
+
+  <script src="js/scripts.js"></script>
+</body>
+</html>

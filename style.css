@@ -1,0 +1,239 @@
+/* Reset e estrutura base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f7fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+  background-color: #0077b6;
+  color: white;
+  padding: 1.5em 1em;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+
+/* Menu horizontal */
+.menu-horizontal {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  padding: 0;
+  margin: 1em 0;
+}
+
+.menu-horizontal li {
+  display: inline-block;
+  list-style-type: none;
+}
+
+.menu-horizontal a {
+  background-color: #0077b6;
+  color: white;
+  padding: 0.6em 1.2em;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.menu-horizontal a:hover,
+.menu-horizontal a:focus {
+  background-color: #005f8a;
+  outline: 2px solid white;
+}
+
+/* Conteúdo principal */
+main {
+  padding: 2em;
+  max-width: 1000px;
+  margin: auto;
+}
+
+section, article {
+  margin-bottom: 2em;
+}
+
+section h2, article h2 {
+  font-size: 1.8em;
+  margin-bottom: 0.5em;
+  color: #023e8a;
+}
+
+article {
+  background-color: white;
+  padding: 1em;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+/* Imagens */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin: 1em 0;
+}
+
+.img-medium {
+  max-width: 600px;
+  width: 100%;
+  display: block;
+  margin: 1em auto;
+}
+
+/* Formulários */
+form {
+  background-color: white;
+  padding: 2em;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+fieldset {
+  border: none;
+  margin-bottom: 1.5em;
+}
+
+legend {
+  font-weight: bold;
+  margin-bottom: 1em;
+  color: #0077b6;
+}
+
+label {
+  display: block;
+  margin-bottom: 1em;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.6em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #0077b6;
+}
+
+/* Botões */
+button,
+.botao {
+  background-color: #0077b6;
+  color: white;
+  padding: 0.8em 1.5em;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 1em;
+  transition: background-color 0.3s ease;
+}
+
+button:hover,
+.botao:hover {
+  background-color: #005f8a;
+}
+
+/* Tabelas */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1em;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 0.8em;
+  text-align: left;
+}
+
+th {
+  background-color: #0077b6;
+  color: white;
+}
+
+/* Barra de progresso */
+.barra-progresso {
+  background-color: #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+  height: 20px;
+  margin-top: 0.5em;
+}
+
+.progresso {
+  background-color: #0077b6;
+  height: 100%;
+  width: 65%;
+  text-align: center;
+  color: white;
+  font-size: 0.9em;
+}
+
+/* Rodapé */
+footer {
+  background-color: #023e8a;
+  color: white;
+  text-align: center;
+  padding: 1em;
+  margin-top: 3em;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .menu-horizontal {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  main {
+    padding: 1em;
+  }
+
+  section h2, article h2 {
+    font-size: 1.5em;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.5em;
+  }
+
+  section h2, article h2 {
+    font-size: 1.2em;
+  }
+
+  .menu-horizontal a {
+    padding: 0.6em 1em;
+    font-size: 0.9em;
+  }
+
+  button,
+  .botao {
+    padding: 0.6em 1em;
+    font-size: 0.9em;
+  }
+}

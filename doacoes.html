@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Doações</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>ONG Esperança Viva</h1>
+    <nav>
+      <ul class="menu-horizontal">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="projetos.html">Projetos</a></li>
+        <li><a href="doacoes.html">Doações</a></li>
+        <li><a href="cadastro.html">Cadastro</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Campanhas Ativas</h2>
+
+      <article>
+        <h3>Educação para Todos</h3>
+        <p>Objetivo: R$ 20.000 para compra de materiais escolares.</p>
+        <div class="barra-progresso"><div class="progresso">65%</div></div>
+      </article>
+
+      <article>
+        <h3>Mutirão da Saúde</h3>
+        <p>Objetivo: R$ 15.000 para exames e medicamentos.</p>
+        <div class="barra-progresso"><div class="progresso" style="width: 80%;">80%</div></div>
+      </article>
+    </section>
+
+    <section>
+      <h2>Faça sua Doação</h2>
+      <form>
+        <label>Valor:
+          <input type="number" placeholder="R$" required />
+        </label>
+
+        <label>Forma de pagamento:
+          <select required>
+            <option>Pix</option>
+            <option>Cartão de crédito</option>
+            <option>Boleto</option>
+          </select>
+        </label>
+
+        <label>Escolha a campanha:
+          <select required>
+            <option>Educação para Todos</option>
+            <option>Mutirão da Saúde</option>
+          </select>
+        </label>
+
+        <button type="submit">Doar</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Prestação de Contas</h2>
+      <p>Transparência é um dos nossos pilares. Veja como os recursos estão sendo aplicados:</p>
+      <ul>
+        <li><a href="#">Relatório Trimestral - 1º trimestre 2025 (PDF)</a></li>
+        <li><a href="#">Relatório Trimestral - 2º trimestre 2025 (PDF)</a></li>
+        <li><a href="#">Resumo de Impacto por Projeto</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 ONG Esperança Viva</p>
+  </footer>
+</body>
+</html>
