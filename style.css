@@ -1,4 +1,36 @@
-/* Reset e estrutura base */
+/* ============================
+   SISTEMA DE DESIGN
+============================= */
+:root {
+  /* Paleta de cores */
+  --color-primary: #0077b6;
+  --color-secondary: #023e8a;
+  --color-accent: #00b4d8;
+  --color-success: #2ecc71;
+  --color-warning: #f39c12;
+  --color-danger: #e74c3c;
+  --color-light: #f4f7fa;
+  --color-dark: #333;
+
+  /* Tipografia */
+  --font-xs: 0.75rem;
+  --font-sm: 0.875rem;
+  --font-md: 1rem;
+  --font-lg: 1.25rem;
+  --font-xl: 1.5rem;
+
+  /* Espaçamento modular */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 64px;
+}
+
+/* ============================
+   RESET E BASE
+============================= */
 * {
   margin: 0;
   padding: 0;
@@ -7,22 +39,27 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #f4f7fa;
-  color: #333;
+  background-color: var(--color-light);
+  color: var(--color-dark);
   line-height: 1.6;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
 }
 
-/* Cabeçalho */
+/* ============================
+   CABEÇALHO E MENU
+============================= */
 header {
-  background-color: #0077b6;
+  background-color: var(--color-primary);
   color: white;
-  padding: 1.5em 1em;
+  padding: var(--space-3) var(--space-2);
   text-align: center;
 }
 
 header h1 {
-  font-size: 2em;
-  margin-bottom: 0.5em;
+  font-size: var(--font-xl);
+  margin-bottom: var(--space-1);
 }
 
 /* Menu horizontal */
@@ -30,20 +67,19 @@ header h1 {
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 1em;
+  gap: var(--space-2);
   padding: 0;
-  margin: 1em 0;
+  margin: var(--space-2) 0;
 }
 
 .menu-horizontal li {
-  display: inline-block;
-  list-style-type: none;
+  position: relative;
 }
 
 .menu-horizontal a {
-  background-color: #0077b6;
+  background-color: var(--color-primary);
   color: white;
-  padding: 0.6em 1.2em;
+  padding: var(--space-1) var(--space-2);
   border-radius: 4px;
   text-decoration: none;
   font-weight: bold;
@@ -52,30 +88,89 @@ header h1 {
 
 .menu-horizontal a:hover,
 .menu-horizontal a:focus {
-  background-color: #005f8a;
+  background-color: var(--color-secondary);
   outline: 2px solid white;
 }
 
-/* Conteúdo principal */
+/* Submenu dropdown */
+.menu-horizontal li:hover .submenu {
+  display: block;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  list-style: none;
+  padding: var(--space-2);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 10;
+}
+
+.submenu li a {
+  background: none;
+  color: var(--color-dark);
+  padding: var(--space-1) var(--space-2);
+  display: block;
+}
+
+/* Menu hambúrguer */
+#menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: var(--font-xl);
+  color: white;
+  margin: var(--space-1);
+}
+
+#mobile-menu {
+  display: none;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-2);
+}
+
+#mobile-menu.show {
+  display: flex;
+}
+
+/* ============================
+   CONTEÚDO PRINCIPAL
+============================= */
 main {
-  padding: 2em;
-  max-width: 1000px;
+  padding: var(--space-4);
+  max-width: 1200px;
   margin: auto;
 }
 
 section, article {
-  margin-bottom: 2em;
+  margin-bottom: var(--space-4);
 }
 
 section h2, article h2 {
-  font-size: 1.8em;
-  margin-bottom: 0.5em;
-  color: #023e8a;
+  font-size: var(--font-lg);
+  margin-bottom: var(--space-2);
+  color: var(--color-secondary);
 }
 
-article {
+/* Grid customizado */
+.grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--space-2);
+}
+
+/* ============================
+   COMPONENTES DE INTERFACE
+============================= */
+
+/* Cards */
+.card {
   background-color: white;
-  padding: 1em;
+  padding: var(--space-3);
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
@@ -85,93 +180,139 @@ img {
   max-width: 100%;
   height: auto;
   border-radius: 6px;
-  margin: 1em 0;
+  margin: var(--space-2) 0;
 }
 
 .img-medium {
   max-width: 600px;
-  width: 100%;
+  margin: var(--space-3) auto;
   display: block;
-  margin: 1em auto;
 }
 
 /* Formulários */
 form {
   background-color: white;
-  padding: 2em;
+  padding: var(--space-4);
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
 
 fieldset {
   border: none;
-  margin-bottom: 1.5em;
+  margin-bottom: var(--space-3);
 }
 
 legend {
   font-weight: bold;
-  margin-bottom: 1em;
-  color: #0077b6;
+  margin-bottom: var(--space-2);
+  color: var(--color-primary);
 }
 
 label {
   display: block;
-  margin-bottom: 1em;
+  margin-bottom: var(--space-2);
 }
 
 input,
 select,
 textarea {
   width: 100%;
-  padding: 0.6em;
+  padding: var(--space-2);
   border: 1px solid #ccc;
   border-radius: 4px;
-  font-size: 1em;
+  font-size: var(--font-md);
+}
+
+input:invalid {
+  border-color: var(--color-danger);
+}
+
+input:valid {
+  border-color: var(--color-success);
 }
 
 input:focus,
 select:focus,
 textarea:focus {
-  outline: 2px solid #0077b6;
+  outline: 2px solid var(--color-accent);
 }
 
 /* Botões */
 button,
 .botao {
-  background-color: #0077b6;
+  background-color: var(--color-primary);
   color: white;
-  padding: 0.8em 1.5em;
+  padding: var(--space-2) var(--space-3);
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 1em;
+  font-size: var(--font-md);
   text-decoration: none;
   display: inline-block;
-  margin-top: 1em;
+  margin-top: var(--space-2);
   transition: background-color 0.3s ease;
 }
 
 button:hover,
 .botao:hover {
-  background-color: #005f8a;
+  background-color: var(--color-secondary);
 }
 
-/* Tabelas */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 1em;
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }
 
-th, td {
-  border: 1px solid #ccc;
-  padding: 0.8em;
-  text-align: left;
+/* Feedback */
+.alert {
+  padding: var(--space-2);
+  border-radius: 4px;
+  margin-bottom: var(--space-2);
 }
 
-th {
-  background-color: #0077b6;
+.alert.success {
+  background-color: var(--color-success);
   color: white;
+}
+
+.toast {
+  position: fixed;
+  bottom: var(--space-2);
+  right: var(--space-2);
+  background-color: var(--color-accent);
+  color: white;
+  padding: var(--space-2);
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: var(--space-4);
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  z-index: 100;
+}
+
+/* Badges e tags */
+.badge {
+  background: var(--color-warning);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: var(--font-xs);
+}
+
+.tag {
+  background: var(--color-light);
+  color: var(--color-dark);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: var(--font-sm);
 }
 
 /* Barra de progresso */
@@ -181,59 +322,15 @@ th {
   overflow: hidden;
   height: 20px;
   margin-top: 0.5em;
+  position: relative;
 }
 
 .progresso {
-  background-color: #0077b6;
+  background-color: var(--color-primary); /* usa cor do sistema de design */
   height: 100%;
-  width: 65%;
   text-align: center;
   color: white;
-  font-size: 0.9em;
-}
-
-/* Rodapé */
-footer {
-  background-color: #023e8a;
-  color: white;
-  text-align: center;
-  padding: 1em;
-  margin-top: 3em;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-  .menu-horizontal {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  main {
-    padding: 1em;
-  }
-
-  section h2, article h2 {
-    font-size: 1.5em;
-  }
-}
-
-@media (max-width: 480px) {
-  header h1 {
-    font-size: 1.5em;
-  }
-
-  section h2, article h2 {
-    font-size: 1.2em;
-  }
-
-  .menu-horizontal a {
-    padding: 0.6em 1em;
-    font-size: 0.9em;
-  }
-
-  button,
-  .botao {
-    padding: 0.6em 1em;
-    font-size: 0.9em;
-  }
+  font-size: var(--font-sm);
+  line-height: 20px;
+  white-space: nowrap;
 }
