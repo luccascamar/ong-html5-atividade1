@@ -4,61 +4,32 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="ONG Esperança Viva: projetos sociais, doações, voluntariado e impacto comunitário." />
-  <title>ONG Esperança Viva</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
     <h1>ONG Esperança Viva</h1>
-    <nav aria-label="Menu principal">
-      <ul class="menu-horizontal" role="menubar" aria-label="Menu principal">
-        <li role="none"><a role="menuitem" href="index.html">Início</a></li>
-        <li role="none"><a role="menuitem" href="projetos.html">Projetos</a></li>
-        <li role="none"><a role="menuitem" href="doacoes.html">Doações</a></li>
-        <li role="none"><a role="menuitem" href="cadastro.html">Cadastro</a></li>
-        <li role="none"><a role="menuitem" href="login.html">Login</a></li>
-      </ul>
-    </nav>
+   <nav>
+  <ul class="menu-horizontal">
+    <li><a href="#/">Início</a></li>
+    <li><a href="#/projetos">Projetos</a></li>
+    <li><a href="#/doacoes">Doações</a></li>
+    <li><a href="#/cadastro">Cadastro</a></li>
+    <li><a href="#/login">Login</a></li>
+    <li><a href="#/blog">Blog</a></li>
+  </ul>
+</nav>
   </header>
 
   <main role="main">
-    <section>
-      <h2 tabindex="0">Missão, Visão e Valores</h2>
-      <p><strong>Missão:</strong> Promover inclusão social e desenvolvimento humano por meio de projetos comunitários sustentáveis.</p>
-      <p><strong>Visão:</strong> Ser referência nacional em transformação social, atuando com ética, inovação e impacto real.</p>
-      <p><strong>Valores:</strong> Solidariedade, transparência, respeito à diversidade, compromisso com resultados e trabalho em rede.</p>
-    </section>
-
-    <section>
-      <h2 tabindex="0">Conquistas da Organização</h2>
-      <ul>
-        <li>Mais de 5.000 pessoas atendidas em projetos educacionais e de saúde.</li>
-        <li>Reconhecimento municipal como entidade de utilidade pública.</li>
-        <li>Parcerias com 30 empresas e instituições locais.</li>
-        <li>Prêmio de Inovação Social em 2024.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2 tabindex="0">Relatórios de Transparência</h2>
-      <p>Todos os dados sobre arrecadação, aplicação de recursos e resultados dos projetos estão disponíveis para consulta pública.</p>
-      <a href="doacoes.html" class="botao" role="button">Acessar relatórios e doar</a>
-    </section>
-
-    <section>
-      <h2 tabindex="0">Indicadores de Impacto</h2>
-      <ul>
-        <li>Voluntários ativos: <strong>85</strong></li>
-        <li>Doações recebidas em 2025: <strong>R$ 42.300</strong></li>
-        <li>Projetos em andamento: <strong>6</strong></li>
-        <li>Pessoas beneficiadas: <strong>+3.200</strong></li>
-      </ul>
-    </section>
+    <div id="app" tabindex="-1"></div>
   </main>
 
   <footer role="contentinfo">
     <p>&copy; 2025 ONG Esperança Viva</p>
   </footer>
+
   <script src="js/scripts.js"></script>
+  <script type="module" src="js/spa.js"></script>
 </body>
 </html>
